@@ -1,0 +1,106 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@400;700&display=swap');
+
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 20px 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    font-family: 'Montserrat', sans-serif;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+main {
+    padding: 60px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: calc(100vh - 100px);
+    margin-top: 60px; 
+}
+
+.skills {
+    padding: 60px 10%;
+    text-align: center;
+}
+
+.title h2 {
+    font-size: 2.5rem;
+    color: #333; 
+    margin-bottom: 40px;
+}
+
+.skills-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.skill {
+    margin-bottom: 30px;
+}
+
+.skill-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    border-color: grey;
+}
+
+.skill-info h3 {
+    font-size: 1.2rem;
+}
+
+.percentage {
+    font-size: 1.1rem;
+}
+
+.skill-bar {
+    background-color: #333;
+    border-radius: 25px;
+    border: 3px solid black;
+    height: 20px;
+    width: 100%;
+    overflow: hidden;
+}
+
+.skill-progress {
+    background-color: yellow; /* Replace with your variable or actual color */
+    height: 100%;
+    border-radius: 25px;
+    transition: width 0.5s ease;
+}
