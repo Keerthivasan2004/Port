@@ -1,4 +1,3 @@
-/* Import Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@400;700&display=swap');
 
 body {
@@ -13,7 +12,7 @@ body {
 header {
     background-color: #333;
     color: white;
-    padding: 20px 0;
+    padding: 20px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     font-family: 'Montserrat', sans-serif;
     width: 100%;
@@ -21,35 +20,106 @@ header {
     top: 0;
     left: 0;
     z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.menu-button {
+    display: none; /* Hidden by default, only shown on small screens */
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    font-size: 1.5em;
+    color: white;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.menu-bar {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    border-radius: 3px;
+}
+
+nav {
+    display: flex;
+    align-items: flex-start;
 }
 
 nav ul {
     list-style-type: none;
     padding: 0;
     margin: 0;
-    text-align: center;
 }
 
-nav ul li {
+nav ul.nav-menu {
+    display: flex;
+    gap: 15px;
+}
+
+nav ul.nav-menu li {
     display: inline;
-    margin: 0 15px;
 }
 
-nav ul li a {
+nav ul.nav-menu li a {
     color: white;
     text-decoration: none;
     font-weight: bold;
     font-size: 1.1em;
 }
 
+nav ul.nav-menu li a:hover {
+    text-decoration: underline;
+}
+
+/* Dropdown menu styles for mobile view */
+nav ul.dropdown-menu {
+    display: none; /* Hidden by default */
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background-color: #333;
+    width: 100%;
+    max-width: 300px;
+    padding: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1001;
+}
+
+nav ul.dropdown-menu.show {
+    display: flex; /* Shown when the menu button is clicked */
+}
+
+nav ul.dropdown-menu li {
+    display: block;
+    margin: 10px 0;
+}
+
+nav ul.dropdown-menu li a {
+    font-size: 1em;
+    padding: 10px;
+    display: block;
+    color: white;
+    text-decoration: none;
+}
+
+nav ul.dropdown-menu li a:hover {
+    background-color: #555;
+}
+
+
 main {
-    padding: 60px 20px;
+    padding: 80px 20px;
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
+    flex-direction: row;
     min-height: calc(100vh - 100px);
-    margin-top: 60px; 
+    font-family: 'Roboto', sans-serif;
 }
 
 .skills {
@@ -103,4 +173,79 @@ main {
     height: 100%;
     border-radius: 25px;
     transition: width 0.5s ease;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 0.5em 0;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .menu-button {
+        display: flex;
+    }
+
+    nav ul.nav-menu {
+        display: none;
+    }
+
+    nav ul.dropdown-menu {
+        display: none;
+    }
+
+    nav ul.dropdown-menu.show {
+        display: flex;
+    }
+
+    main {
+        padding: 20px;
+        flex-direction: column;
+    }
+
+    .home-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .photo {
+        margin-bottom: 20px;
+    }
+
+    .photo img {
+        width: 80%;
+        height: auto;
+        max-width: 300px;
+    }
+
+    .intro {
+        padding-left: 0;
+    }
+
+    .intro h1 {
+        font-size: 2em;
+    }
+
+    .intro p {
+        font-size: 1em;
+    }
+
+    .resume-link {
+        padding: 8px 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .intro h1 {
+        font-size: 1.5em;
+    }
+
+    .intro p {
+        font-size: 0.9em;
+    }
 }
